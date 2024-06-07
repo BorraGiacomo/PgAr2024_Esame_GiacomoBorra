@@ -1,4 +1,4 @@
-package com.esame;
+package com.player;
 
 public class Ruolo {
     private String nome;

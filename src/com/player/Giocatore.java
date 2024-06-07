@@ -1,4 +1,4 @@
-package com.esame;
+package com.player;
 
 import java.util.LinkedList;
 
