@@ -1,18 +1,20 @@
-## Getting Started
+# PgAr2024_Esame_ < NomeCognome >
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Candidato
 
-## Folder Structure
+|                |                                |
+| -------------- | ------------------------------ |
+|Nome            |** < Giacomo >**                |
+|Cognome         |** < Borra >**                  |
+|Matricola       |** < 746260 >**                 |
+|Corso di Studi  |** < IngegneriaInformatica >**  |
 
-The workspace contains two folders by default, where:
+## Moduli Implementati
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+<! - - Spuntare con una ’X ’ tra le quadre i moduli implementati -->
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- [ ] Modulo 1: Personaggi
+- [ ] Modulo 2: Per un pugno di carte
+- [ ] Modulo 3: Classifica
+- [ ] Modulo 4: Saloon
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
