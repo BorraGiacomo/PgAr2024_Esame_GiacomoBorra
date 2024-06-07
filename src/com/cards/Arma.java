@@ -11,4 +11,8 @@ public class Arma extends Carta{
     public int getDistanza(){
         return distanza;
     }
+
+    public String toString(){
+        return super.toString()+"\nDistanza: "+distanza;
+    }
 }

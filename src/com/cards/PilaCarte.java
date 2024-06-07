@@ -24,4 +24,8 @@ public abstract class PilaCarte {
     public void setCarte(ArrayList<Carta> carte){
         this.carte = new ArrayList<Carta>(carte);
     }
+
+    public void clear(){
+        carte.clear();
+    }
 }

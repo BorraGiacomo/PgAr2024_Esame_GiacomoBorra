@@ -22,4 +22,8 @@ public abstract class Carta {
     public String getNumero() {
         return numero;
     }
+
+    public String toString(){
+        return "Nome: "+nome+", seme: "+seme+", numero: "+numero;
+    }
 }

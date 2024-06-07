@@ -18,7 +18,11 @@ public class Mazzo extends PilaCarte{
     }
 
     public Carta pesca(){
-        return getCarte().removeFirst();
+        if(getCarte().size()>0){
+            return getCarte().removeFirst();
+        }
+        else
+            return null;
     }
 
     public void mescola(){

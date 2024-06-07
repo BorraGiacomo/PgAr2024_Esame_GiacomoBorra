@@ -12,4 +12,7 @@ public class Equipaggiabile extends Carta{
         return descrizione;
     }
     
+    public String toString(){
+        return super.toString()+"\nDescrizione: "+descrizione;
+    }
 }

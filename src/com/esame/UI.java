@@ -1,5 +1,10 @@
 package com.esame;
 
+import java.util.List;
+import java.util.Scanner;
+
+import com.player.Giocatore;
+
 import it.unibs.fp.mylib.InputDati;
 import it.unibs.fp.mylib.MyMenu;
 
@@ -9,6 +14,12 @@ public class UI {
     private final String TXT_NOME_GIOCATORE = "Inserire il nome del giocatore:";
     private final String ERRORE_NUMERO_GIOCATORI = "Numero di giocatori troppo alto";
     private final String NOME_NON_VALIDO = "Nome del giocatore già utilizzato\n";
+    private final String NEXT = "\n[ENTER]";
+    private final String TITOLO_MENU_TURNO = "E' il turno di %s, premi exit per finire il turno";
+    private final String[] SCELTE_MENU_TURNO = {"Guarda lo sceriffo", "Guarda la tua mano", "Guarda le tue carte equipaggiate", "Guarda la distanza da un altro giocatore", "Guarda vita", "Guarda chi sei", "Usa carta"};
+    private final String GUARDA_SCERIFFO = "Lo sceriffo e' %d";
+
+    private MyMenu menu_turno;
 
     public UI(){
 
@@ -48,7 +59,31 @@ public class UI {
         return nomi;
     }
 
+    public int sceltaMenuTurno(Giocatore g){
+        menu_turno = new MyMenu(String.format(TITOLO_MENU_TURNO, g.getNome()), SCELTE_MENU_TURNO);
+        return menu_turno.scegli();
+    }
+
+    public void guardaSceriffo(Giocatore g){
+        stampa(String.format(GUARDA_SCERIFFO, g.getNome()));
+        waitUser();
+    }
+
     public void stampa(String s){
         System.out.println(s);
+    }   
+
+    public <E> void stampaLista(List<E> lista){
+        for(E obj : lista){
+            stampa(obj.toString());
+            stampa("\n");
+        }
+        waitUser();
+    }
+
+    private void waitUser(){
+        stampa(NEXT);
+        Scanner s = new Scanner(System.in);
+        s.next();
     }
 }
