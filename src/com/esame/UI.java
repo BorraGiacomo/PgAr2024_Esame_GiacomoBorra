@@ -8,6 +8,7 @@ public class UI {
     private final String TXT_NOME_SCERIFFO = "Inserire il nome dello sceriffo:";
     private final String TXT_NOME_GIOCATORE = "Inserire il nome del giocatore:";
     private final String ERRORE_NUMERO_GIOCATORI = "Numero di giocatori troppo alto";
+    private final String NOME_NON_VALIDO = "Nome del giocatore già utilizzato\n";
 
     public UI(){
 
@@ -23,12 +24,28 @@ public class UI {
         return num;
     }
 
-    public String getSceriffo(){
-        return InputDati.leggiStringaNonVuota(TXT_NOME_SCERIFFO);
-    }
+    public String[] getNomiGiocatori(int numero_giocatori){
+        String[] nomi = new String[numero_giocatori];
+        nomi[0] = InputDati.leggiStringaNonVuota(TXT_NOME_SCERIFFO);
+        
+        for(int i = 1; i<numero_giocatori; i++){
+            boolean controllo;
+            String nomeTemp;
+            do{
+                controllo = false;
+                nomeTemp = InputDati.leggiStringaNonVuota(TXT_NOME_GIOCATORE);
 
-    public String getNomeGiocatore(){
-        return InputDati.leggiStringaNonVuota(TXT_NOME_GIOCATORE);
+                for(int j = 0; j<i; j++){
+                    if(nomi[j].equals(nomeTemp)){
+                        stampa(NOME_NON_VALIDO);
+                        controllo = true;
+                    }
+                }
+            }while(controllo);
+
+            nomi[i] = nomeTemp;
+        }
+        return nomi;
     }
 
     public void stampa(String s){

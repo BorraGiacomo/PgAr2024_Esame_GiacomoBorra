@@ -7,14 +7,17 @@ import com.cards.Equipaggiabile;
 
 public class Giocatore {
     private String nome;
+    private int pf;
     private LinkedList<Carta> mano;
     private LinkedList<Equipaggiabile> carteEquipaggiate; 
     private Arma arma;
     private Ruolo ruolo;
     private int vita;
 
-    public Giocatore(String nome){
+    public Giocatore(String nome, Ruolo ruolo, int pf){
         this.nome = nome;
+        this.ruolo = ruolo;
+        this.pf = pf;
     }
 
     public String getNome() {
@@ -45,11 +48,24 @@ public class Giocatore {
         return vita;
     }
 
-    public void addVita(int vita){
-        this.vita += vita;
+    public boolean addVita(int vita){
+        if(this.vita+vita <= pf){
+            this.vita += vita;
+            return true;
+        }
+        else
+            return false;
     }
 
     public boolean isDead(){
         return vita <= 0;
+    }
+
+    public int getPuntiFerita(){
+        return this.pf;
+    }
+
+    public boolean equals(Giocatore g){
+        return (nome.equals(g.getNome()));
     }
 }

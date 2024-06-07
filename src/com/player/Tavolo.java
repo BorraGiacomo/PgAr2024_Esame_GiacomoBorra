@@ -1,21 +1,18 @@
 package com.player;
 
-public class Tavolo {
-    private Graph<Giocatore> giocatori;
+import java.util.LinkedList;
 
-    public Tavolo(){
-        giocatori = new Graph<Giocatore>();
+public class Tavolo {
+    private LinkedList<Giocatore> giocatori;
+
+    public Tavolo(LinkedList<Giocatore> giocatori){
+        this.giocatori = giocatori;
     }
 
-    public void addGiocatori(Giocatore[] giocatori){
-        for(int i = 0; i<giocatori.length; i++){
-            this.giocatori.add(giocatori[i]);
-        }
+    public int getDistanza(Giocatore g1, Giocatore g2){
+        int i1 = giocatori.indexOf(g1);
+        int i2 = giocatori.indexOf(g2);
 
-        for(int i = 0; i<giocatori.length; i++){
-            for(int j = i+1; j!=i; j++){
-                
-            }
-        }
+        return Math.min(Math.abs(i1-i2), Math.min(i1, i2) + giocatori.size()-Math.max(i1, i2));
     }
 }
