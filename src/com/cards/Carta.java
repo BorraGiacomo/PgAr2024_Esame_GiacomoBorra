@@ -26,4 +26,8 @@ public abstract class Carta {
     public String toString(){
         return "Nome: "+nome+", seme: "+seme+", numero: "+numero;
     }
+
+    public boolean equals(Carta c){
+        return nome.equals(c.getNome());
+    }
 }

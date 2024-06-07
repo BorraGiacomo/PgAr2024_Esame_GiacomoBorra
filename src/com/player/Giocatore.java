@@ -18,6 +18,9 @@ public class Giocatore {
         this.nome = nome;
         this.ruolo = ruolo;
         this.pf = pf;
+        vita = pf;
+        mano = new LinkedList<Carta>();
+        carteEquipaggiate = new LinkedList<Equipaggiabile>();
     }
 
     public String getNome() {
@@ -32,7 +35,7 @@ public class Giocatore {
         return carteEquipaggiate;
     }
 
-    public Carta getArma() {
+    public Arma getArma() {
         return arma;
     }
 
